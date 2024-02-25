@@ -40,76 +40,76 @@ def mostrar_menu():
     print("6. Salir")
 
 def ejecutar_opcion(opcion):
-    if opcion == "1":
-        tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
-        if tabla == "pelicula":
-            mostrar_registros_pelicula()
-        elif tabla == "renta":
-            mostrar_registros_renta()
-        elif tabla == "usuario":
-            mostrar_registros_usuario()
+    with app.app_context():
+        if opcion == "1":
+            tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
+            if tabla == "pelicula":
+                mostrar_registros_pelicula()
+            elif tabla == "renta":
+                mostrar_registros_renta()
+            elif tabla == "usuario":
+                mostrar_registros_usuario()
+            else:
+                print("Tabla no válida.")
+        elif opcion == "2":
+            tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
+            if tabla == "pelicula":
+                id_pelicula = int(input("Ingrese el ID de la película a filtrar: "))
+                filtrar_pelicula_por_id(id_pelicula)
+            elif tabla == "renta":
+                id_renta = int(input("Ingrese el ID de la renta a filtrar: "))
+                filtrar_renta_por_id(id_renta)
+            elif tabla == "usuario":
+                id_usuario = int(input("Ingrese el ID del usuario a filtrar: "))
+                filtrar_usuario_por_id(id_usuario)
+            else:
+                print("Tabla no válida.")
+        elif opcion == "3":
+            tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
+            if tabla == "pelicula":
+                id_pelicula = int(input("Ingrese el ID de la película a actualizar: "))
+                nuevo_nombre = input("Ingrese el nuevo nombre de la película: ")
+                actualizar_nombre_pelicula_pelicula(id_pelicula, nuevo_nombre)
+            elif tabla == "renta":
+                id_renta = int(input("Ingrese el ID de la renta a actualizar: "))
+                nueva_fecha_renta = input("Ingrese la nueva fecha de renta (YYYY-MM-DD): ")
+                actualizar_fecha_renta_renta(id_renta, nueva_fecha_renta)
+            elif tabla == "usuario":
+                id_usuario = int(input("Ingrese el ID del usuario a actualizar: "))
+                nuevo_nombre = input("Ingrese el nuevo nombre del usuario: ")
+                actualizar_nombre_usuario_usuario(id_usuario, nuevo_nombre)
+            else:
+                print("Tabla no válida.")
+        elif opcion == "4":
+            tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
+            if tabla == "pelicula":
+                id_pelicula = int(input("Ingrese el ID de la película a eliminar: "))
+                borrar_pelicula_pelicula(id_pelicula)
+            elif tabla == "renta":
+                id_renta = int(input("Ingrese el ID de la renta a eliminar: "))
+                borrar_renta_renta(id_renta)
+            elif tabla == "usuario":
+                id_usuario = int(input("Ingrese el ID del usuario a eliminar: "))
+                borrar_usuario_usuario(id_usuario)
+            else:
+                print("Tabla no válida.")
+        elif opcion == "5":
+            tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
+            if tabla == "pelicula":
+                borrar_todos_los_registros_pelicula()
+            elif tabla == "renta":
+                borrar_todos_los_registros_renta()
+            elif tabla == "usuario":
+                borrar_todos_los_registros_usuario()
+            else:
+                print("Tabla no válida.")
+        elif opcion == "6":
+            print("¡Hasta luego!")
         else:
-            print("Tabla no válida.")
-    elif opcion == "2":
-        tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
-        if tabla == "pelicula":
-            id_pelicula = int(input("Ingrese el ID de la película a filtrar: "))
-            filtrar_pelicula_por_id(id_pelicula)
-        elif tabla == "renta":
-            id_renta = int(input("Ingrese el ID de la renta a filtrar: "))
-            filtrar_renta_por_id(id_renta)
-        elif tabla == "usuario":
-            id_usuario = int(input("Ingrese el ID del usuario a filtrar: "))
-            filtrar_usuario_por_id(id_usuario)
-        else:
-            print("Tabla no válida.")
-    elif opcion == "3":
-        tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
-        if tabla == "pelicula":
-            id_pelicula = int(input("Ingrese el ID de la película a actualizar: "))
-            nuevo_nombre = input("Ingrese el nuevo nombre de la película: ")
-            actualizar_nombre_pelicula_pelicula(id_pelicula, nuevo_nombre)
-        elif tabla == "renta":
-            id_renta = int(input("Ingrese el ID de la renta a actualizar: "))
-            nueva_fecha_renta = input("Ingrese la nueva fecha de renta (YYYY-MM-DD): ")
-            actualizar_fecha_renta_renta(id_renta, nueva_fecha_renta)
-        elif tabla == "usuario":
-            id_usuario = int(input("Ingrese el ID del usuario a actualizar: "))
-            nuevo_nombre = input("Ingrese el nuevo nombre del usuario: ")
-            actualizar_nombre_usuario_usuario(id_usuario, nuevo_nombre)
-        else:
-            print("Tabla no válida.")
-    elif opcion == "4":
-        tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
-        if tabla == "pelicula":
-            id_pelicula = int(input("Ingrese el ID de la película a eliminar: "))
-            borrar_pelicula_pelicula(id_pelicula)
-        elif tabla == "renta":
-            id_renta = int(input("Ingrese el ID de la renta a eliminar: "))
-            borrar_renta_renta(id_renta)
-        elif tabla == "usuario":
-            id_usuario = int(input("Ingrese el ID del usuario a eliminar: "))
-            borrar_usuario_usuario(id_usuario)
-        else:
-            print("Tabla no válida.")
-    elif opcion == "5":
-        tabla = input("Ingrese el nombre de la tabla (pelicula, renta, usuario): ")
-        if tabla == "pelicula":
-            borrar_todos_los_registros_pelicula()
-        elif tabla == "renta":
-            borrar_todos_los_registros_renta()
-        elif tabla == "usuario":
-            borrar_todos_los_registros_usuario()
-        else:
-            print("Tabla no válida.")
-    elif opcion == "6":
-        print("¡Hasta luego!")
-    else:
-        print("Opción no válida.")
+            print("Opción no válida.")
 
 
 if __name__ == "__main__":
-
     while True:
         mostrar_menu()
         opcion = input("Seleccione una opción: ")
