@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px; /* Reduje el ancho máximo para que coincida mejor con el contenido */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 30px); /* Reduje el ancho de los inputs para dejar espacio para el borde */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button,
+a.btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px; /* Añadí margen superior para separar el botón del último input */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+a.btn:hover {
+    background-color: #ddd;
+}
+
+/* Estilos específicos para los botones de usuario, película y renta */
+.btn-usuario {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-pelicula {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-renta {
+    background-color: #dc3545;
+    color: #fff;
+}
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelicula Agregada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Pelicula agregada</h1>
+        <p>ID Pelicula: {{ idPelicula }}</p>
+        <p>Nombre: {{ name }}</p>
+        <p>Genero: {{ genero }}</p>
+        <p>Inventario: {{inventario}}</p>
+        <a href="{{ url_for('pelicula.agregar_pelicula') }}" class="btn btn-pelicula">Agregar otra pelicula</a>
+    </div>
+</body>
+</html>

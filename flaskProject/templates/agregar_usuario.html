@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Usuario</h1>
+        <form action="{{ url_for('usuario.agregar_usuario') }}" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+            <input type="text" id="ap_pat" name="ap_pat" placeholder="Apellido Paterno" required>
+            <input type="text" id="ap_mat" name="ap_mat" placeholder="Apellido Materno">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <input type="checkbox" id="superUser" name="superUser"> <label for="superUser">Super Usuario</label>
+            <button type="submit" class="btn btn-usuario">Agregar Usuario</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

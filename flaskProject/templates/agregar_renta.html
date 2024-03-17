@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Renta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Renta</h1>
+        <form action="{{ url_for('renta.agregar_renta') }}" method="POST">
+            <input type="text" id="idUsuario" name="idUsuario" placeholder="ID Usuario" required>
+            <input type="text" id="idPelicula" name="idPelicula" placeholder="ID Pelicula" required>
+            <input type="text" id="fecha_renta" name="fecha_renta" placeholder="Apellido Paterno" required>
+            <input type="text" id="dias_de_renta" name="dias_de_renta" placeholder="Dias de renta">
+            <input type="text" id="estatus" name="estatus" placeholder="Estatus" required>
+            <button type="submit" class="btn btn-renta">Agregar Renta</button>
+        </form>
+    </div>
+</body>
+</html>

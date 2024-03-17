@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Agregado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Usuario Agregado</h1>
+        <p>ID Usuario: {{ idUsuario }}</p>
+        <p>Nombre: {{ name }}</p>
+        <p>Email: {{ email }}</p>
+        <a href="{{ url_for('usuario.agregar_usuario') }}" class="btn btn-usuario">Agregar otro usuario</a>
+    </div>
+</body>
+</html>
+
+

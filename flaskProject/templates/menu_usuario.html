@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Menú de Usuario</h1>
+        <form action="/ver_usuarios" method="get">
+            <button type="submit" class="btn-usuario">Ver Usuarios</button>
+        </form>
+        <form action="/agregar_usuario" method="get">
+            <button type="submit" class="btn-usuario">Agregar Usuario</button>
+        </form>
+        <form action="/editar_usuario" method="get">
+            <button type="submit" class="btn-usuario">Editar Usuario</button>
+        </form>
+        <form action="/eliminar_usuario" method="get">
+            <button type="submit" class="btn-usuario">Eliminar Usuario</button>
+        </form>
+    </div>
+</body>
+</html>
