@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Rentas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Rentas</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Película</th>
+                    <th>Fecha de Renta</th>
+                    <th>Dias de Renta </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for renta in rentas %}
+                <tr>
+                    <td>{{ renta.id }}</td>
+                    <td>{{ renta.usuario }}</td>
+                    <td>{{ renta.pelicula }}</td>
+                    <td>{{ renta.fecha_renta }}</td>
+                    <td>{{ renta.dias_de_renta }}</td>
+                    <td>
+                        <a href="{{ url_for('renta.editar_renta', id_renta=renta.id) }}" class="btn-renta">Editar</a>
+                        <a href="{{ url_for('renta.eliminar_renta', id_renta=renta.id) }}" class="btn-renta">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

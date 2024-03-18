@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Película</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Eliminar Película</h1>
+        <p>¿Estás seguro de que deseas eliminar esta película?</p>
+        <form action="{{ url_for('pelicula.eliminar_pelicula', id_pelicula=pelicula.id) }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn-pelicula">Eliminar</button>
+        </form>
+        <a href="{{ url_for('menu_pelicula') }}" class="btn-pelicula">Cancelar</a>
+    </div>
+</body>
+</html>

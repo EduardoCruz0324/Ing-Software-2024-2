@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Usuario</h1>
+        <form action="{{ url_for('usuario.editar_usuario', id_usuario=usuario.id) }}" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="{{ usuario.nombre }}" required>
+            <label for="ap_pat">Apellido Paterno:</label>
+            <input type="text" id="ap_pat" name="ap_pat" value="{{ usuario.ap_pat }}" required>
+            <label for="ap_mat">Apellido Materno:</label>
+            <input type="text" id="ap_mat" name="ap_mat" value="{{ usuario.ap_mat }}" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ usuario.email }}" required>
+            <button type="submit" class="btn-usuario">Guardar Cambios</button>
+        </form>
+    </div>
+</body>
+</html>

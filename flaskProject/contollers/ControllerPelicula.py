@@ -34,7 +34,7 @@ def editar_pelicula(id_pelicula):
         # Aquí cargarías la película con el ID id_pelicula desde la base de datos
         # Supongamos que obtienes una película llamada pelicula de la base de datos
         pelicula = {'idPelicula': id_pelicula, 'nombre': 'Nombre Película', 'genero': 'Género'}
-        return render_template('edit_movie.html', pelicula=pelicula)
+        return render_template('editar_pelicula.html', pelicula=pelicula)
     else:
         # Aquí actualizarías la película en la base de datos con la información del formulario
         flash("Película actualizada correctamente")

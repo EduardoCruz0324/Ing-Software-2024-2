@@ -25,8 +25,8 @@
                     <td>{{ usuario.nombre }}</td>
                     <td>{{ usuario.email }}</td>
                     <td>
-                        <a href="{{ url_for('editar_usuario', id_usuario=usuario.id) }}" class="btn-editar">Editar</a>
-                        <a href="{{ url_for('eliminar_usuario', id_usuario=usuario.id) }}" class="btn-eliminar">Eliminar</a>
+                        <a href="{{ url_for('usuario.editar_usuario', id_usuario=usuario.id) }}" class="btn-usuario">Editar</a>
+                        <a href="{{ url_for('usuario.eliminar_usuario', id_usuario=usuario.id) }}" class="btn-usuario">Eliminar</a>
                     </td>
                 </tr>
                 {% endfor %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Películas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Películas</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Género</th>
+                    <th>Duracion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pelicula in peliculas %}
+                <tr>
+                    <td>{{ pelicula.id }}</td>
+                    <td>{{ pelicula.titulo }}</td>
+                    <td>{{ pelicula.genero }}</td>
+                    <td>{{ pelicula.duracion }}</td>
+                    <td>
+                        <a href="{{ url_for('pelicula.editar_pelicula', id_pelicula=pelicula.id) }}" class="btn-pelicula">Editar</a>
+                        <a href="{{ url_for('pelicula.eliminar_pelicula', id_pelicula=pelicula.id) }}" class="btn-pelicula">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

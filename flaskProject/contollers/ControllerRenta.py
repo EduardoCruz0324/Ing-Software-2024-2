@@ -27,7 +27,7 @@ def agregar_renta():
             flash("Hello from flash!")
             return url_for('renta.agregar_renta')
         
-        return render_template('añadido_renta.html', idUsuario=idUsuario, idPelicula=idPelicula)
+        return render_template('añadido_renta.html', idUsuario=idUsuario, idPelicula=idPelicula, fecha_renta=fecha_renta, dias_de_renta=dias_de_renta, estatus=estatus)
 
 @renta_blueprint.route('/editar/<int:id_renta>', methods=['GET', 'POST'])
 def editar_renta(id_renta):
@@ -35,7 +35,7 @@ def editar_renta(id_renta):
         # Aquí cargarías la renta con el ID id_renta desde la base de datos
         # Supongamos que obtienes una renta llamada renta de la base de datos
         renta = {'idRenta': id_renta, 'idUsuario': 'ID Usuario', 'idPelicula': 'ID Película', 'fecha_renta': 'Fecha de Renta', 'dias_de_renta': 'Días de Renta', 'estatus': 'Estatus'}
-        return render_template('edit_rent.html', renta=renta)
+        return render_template('editar_renta.html', renta=renta)
     else:
         # Aquí actualizarías la renta en la base de datos con la información del formulario
         flash("Renta actualizada correctamente")

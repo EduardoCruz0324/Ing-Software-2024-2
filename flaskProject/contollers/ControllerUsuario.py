@@ -28,7 +28,7 @@ def agregar_usuario():
             flash("Hello from flash!")
             return url_for('usuario.agregar_usuario')
         
-        return render_template('añadido_usuario.html', name=name, email=email)
+        return render_template('añadido_usuario.html', name=name, ap_mat=ap_mat, ap_pat=ap_pat, email=email)
 
 @usuario_blueprint.route('/editar/<int:id_usuario>', methods=['GET', 'POST'])
 def editar_usuario(id_usuario):
@@ -36,7 +36,7 @@ def editar_usuario(id_usuario):
         # Aquí cargarías el usuario con el ID id_usuario desde la base de datos
         # Supongamos que obtienes un usuario llamado usuario de la base de datos
         usuario = {'idUsuario': id_usuario, 'name': 'Nombre', 'email': 'correo@example.com'}
-        return render_template('edit_user.html', usuario=usuario)
+        return render_template('editar_usuario.html', usuario=usuario)
     else:
         # Aquí actualizarías el usuario en la base de datos con la información del formulario
         flash("Usuario actualizado correctamente")
